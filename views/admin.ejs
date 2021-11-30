@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/ccbs.css">
+    <link rel="stylesheet" href="../public/css/normalize.css">
+    <title>Admin</title>
+</head>
+
+<body>
+<div id="header">
+    <div class="logo">
+        <a href="http://www.ccbs31.fr/84571272"><img src="../public/img/logo.jpg" alt=""></a>
+    </div>
+
+    <ul class="menu">
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/logout">Déconnexion</a></li>
+        <li><p>Que la force soit avec toi <span class="userStyle2"><%=user.prenom%></span></p></li>
+    </ul>
+</div>
+
+<div id="container">
+
+    <div class="imgpatte">
+        <img src="../public/img/animal-prints_64.png" alt="">
+        <h1 class="titre_backoffice">Administration</h1>
+    </div>
+
+    <div class="detail">
+        <div class="blocBack">
+            <div class="blocIcoAdmin">
+                <div class="imgIco"><a href="/gestion-equipe"><img class="ico" src="../public/img/walking.png" alt=""></a>
+                    <h2>Gestion des équipes.</h2>
+                </div>
+                <div class="imgIco"><a href="/gestion-utilisateur"><img class="ico" src="../public/img/user.png" alt=""></a>
+                    <h2>Gestion des utilisateurs.</h2>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

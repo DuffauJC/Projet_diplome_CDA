@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/ccbs.css">
+    <link rel="stylesheet" href="../public/css/normalize.css">
+
+    <title>Accueil</title>
+</head>
+<body>
+<% include ./partials/header.ejs %>
+<div id="container">
+    <% include ./partials/message.ejs%>
+    <div class="index_img">
+        <!-- The video -->
+        <video autoplay muted loop id="myVideo">
+            <source src="../public/Agility.mp4" type="video/mp4">
+        </video>
+        <button id="myBtn" onclick="myFunction()">Pause</button>
+        <!-- Optional: some overlay text to describe the video -->
+    </div>
+    <div class="imgpatte">
+        <img src="../public/img/animal-prints_64.png" alt="">
+        <h1 class="titre_detail">Les Agilitistes du club.</h1>
+    </div>
+    <div class="equipe">
+        <% for (equipe of tabEquipes){ %>
+            <div class="blocEquipe">
+                <a class="info" href="/equipes/<%= equipe._id %>">
+                    <img class="listEquipe"  src="<%= equipe.image_url%>photo-<%= equipe.userId %>-<%= equipe.toutou %>.jpg" alt="">
+                </a>
+                <div class="bottomleft"><%= equipe.nom %></div>
+            </div>
+        <% } %>
+    </div>
+</div>
+</body>
+<script>
+    // Get the video
+    let video = document.getElementById("myVideo");
+
+    // Get the button
+    let btn = document.getElementById("myBtn");
+
+    // Pause and play the video, and change the button text
+    function myFunction() {
+        if (video.paused) {
+            video.play();
+            btn.innerHTML = "Pause";
+        } else {
+            video.pause();
+            btn.innerHTML = "Play";
+        }
+    }
+</script>
+</html>

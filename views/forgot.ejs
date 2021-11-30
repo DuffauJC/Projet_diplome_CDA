@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/ccbs.css">
+    <link rel="stylesheet" href="../public/css/normalize.css">
+    <title>Login</title>
+</head>
+
+<body>
+<div id="header">
+    <div class="logo">
+        <a href="http://www.ccbs31.fr/84571272"><img src="../public/img/logo.jpg" alt=""></a>
+    </div>
+    <ul class="menu">
+        <li><a href="/">Accueil</a></li>
+    </ul>
+</div>
+
+<div id="container">
+    <div class="imgpatte">
+        <img src="../public/img/animal-prints_64.png" alt="">
+        <h1 class="titre_Conex">Récupération mot de passe.</h1>
+    </div>
+    <% include ./partials/message.ejs%>
+    <form class="form2" action="/forgot" method="post">
+        <div class="item">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email"  size="20" maxlength="50" placeholder="Email" required="required"/>
+        </div>
+        <div class="item">
+            <label></label>
+            <input name="submit" type="submit" value="Reset mot de passe"/>
+        </div>
+    </form>
+    <p class="lienConex">Pensez à vérifier vos spam !!!</p>
+</div>
+</body>
+</html>

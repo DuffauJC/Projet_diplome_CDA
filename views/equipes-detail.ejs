@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/ccbs.css">
+    <link rel="stylesheet" href="../public/css/normalize.css">
+    <title>équipe-détails</title>
+</head>
+
+<body>
+<% include ./partials/header.ejs %>
+
+<div id="container">
+    <div class="retourBack">
+        <a href="/"><img src="../public/img/back_32.png" alt=""></a>
+    </div>
+    <div class="imgpatte">
+        <img src="../public/img/animal-prints_64.png" alt="">
+        <h1 class="titre_detail">L'équipe.</h1>
+    </div>
+        <h2><%= equipe.nom %></h2>
+        <div class="detail">
+            <div class="blocLister">
+                <p>Nom du toutou : <%= equipe.toutou %></p>
+                <p>Race : <%= equipe.race %></p>
+                <p>Sexe : <%= equipe.sexe %></p>
+                <p>Prénom du maitre : <%= equipe.maitre %></p>
+                <p>Né(e) le : <%= equipe.naissance %></p>
+                <P>Couleur de la robe : <%= equipe.couleur %></P>
+                <p>Nombres de victoires : <%= equipe.victoires %></p>
+                <p>Nombres de podiums : <%= equipe.podiums %></p>
+            </div>
+            <div class="blocVignette">
+                <img class="listVignette" src="<%= equipe.image_url%>photo-<%= equipe.userId %>-<%= equipe.toutou %>.jpg" width="" height="" alt="">
+            </div>
+        </div>
+        <div class="imgpatte">
+            <img src="../public/img/dog_64.png" alt="">
+            <h2 class="titre_comment">Le petit mot de <%= equipe.maitre %>...</h2>
+        </div>
+        <div class="comment">
+            <p><%= equipe.comment %></p>
+        </div>
+
+</div>
+</body>
+</html>

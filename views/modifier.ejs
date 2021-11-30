@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/ccbs.css">
+    <link rel="stylesheet" href="../public/css/normalize.css">
+    <title>Modifier-supprimer</title>
+</head>
+
+<body>
+<div id="header">
+    <div class="logo">
+        <a href="http://www.ccbs31.fr/84571272"><img src="../public/img/logo.jpg" alt=""></a>
+    </div>
+
+    <ul class="menu">
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/logout">Déconnexion</a></li>
+        <li><p>Que la force soit avec toi <span class="userStyle2"><%= user.prenom %></span></p></li>
+    </ul>
+</div>
+
+<div id="container">
+    <div class="retourBack">
+        <a href="/backoffice"><img src="../public/img/back_32.png" alt=""></a>
+    </div>
+    <div class="imgpatte">
+        <img src="../public/img/animal-prints_64.png" alt="">
+        <h1 class="titre_detail">Modifier ou Supprimer</h1>
+    </div>
+    <div class="equipe">
+        <% for (equipe of tabEquipes){ %>
+            <div class="blocEquipe">
+
+                <a class="info" href="/verification-detail/<%= equipe._id %>">
+                    <img class="listEquipe"
+                    src="<%= equipe.image_url%>photo-<%= equipe.userId %>-<%= equipe.toutou %>.jpg" alt="">
+
+                </a>
+
+                <div class="bottomleft"><%= equipe.nom %></div>
+                <div class="modifSup">
+                    <a class="modif" href="/modifier/<%= equipe._id %>">Modifier</a>
+                    <a class="sup" href="/delete/<%= equipe._id %>"
+                       onclick="return confirm('Voulez-vous vraiment supprimer ?');">Supprimer</a>
+                </div>
+
+            </div>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>

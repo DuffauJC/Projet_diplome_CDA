@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/ccbs.css">
+    <link rel="stylesheet" href="../public/css/normalize.css">
+    <title>équipe-détails</title>
+</head>
+
+<body>
+<% include ./partials/header.ejs %>
+
+<div id="container">
+    <div class="imgpatte">
+        <img src="../public/img/animal-prints_64.png" alt="">
+        <h1 class="titre_detail">Les équipes.</h1>
+    </div>
+    <div class="equipe">
+        <% for (equipe of tabEquipes){ %>
+        <div class="blocEquipe">
+            <a class="info" href="/equipes/<%= equipe._id %>">
+                <img class="listEquipe" src="<%= equipe.image_url%>photo-<%= equipe.userId %>-<%= equipe.toutou %>.jpg" title="" width=""
+                     height="" alt="">
+            </a>
+            <div class="bottomleft"><%= equipe.nom %></div>
+        </div>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>

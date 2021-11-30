@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/ccbs.css">
+    <link rel="stylesheet" href="../public/css/normalize.css">
+    <title>Edition utilisateur</title>
+</head>
+
+<body>
+<div id="header">
+    <div class="logo">
+        <a href="http://www.ccbs31.fr/84571272"><img src="../public/img/logo.jpg" alt=""></a>
+    </div>
+
+    <ul class="menu">
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/logout">Déconnexion</a></li>
+        <li><p>Que la force soit avec toi <span class="userStyle2"><%= user.prenom %></span></p></li>
+    </ul>
+</div>
+
+<div id="container">
+    <div class="retourBack">
+        <a href="/gestion-utilisateur"><img src="../public/img/back_32.png" alt=""></a>
+    </div>
+    <div class="imgpatte">
+        <img src="../public/img/animal-prints_64.png" alt="">
+        <h1 class="titre_editer">Ajout d'un utilisateur </h1>
+    </div>
+    <% include ./partials/message.ejs %>
+    <div class="detail">
+        <div class="blocDetail">
+            <h2>Renseignements utilisateur.</h2>
+            <form name="form3" method="post" action="/Admin-inscription-user" enctype="multipart/form-data">
+                <div class="item">
+                    <label for="role">Role</label>
+                    <select style="width: 197px" name="role" id="role">
+                        <option >Utilisateur</option>
+                    </select>
+                </div>
+                <div class="item">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" name="prenom" id="prenom"
+                           maxlength="50" placeholder="Prénom" required="required"/>
+                </div>
+                <div class="item">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email"
+                           maxlength="50" placeholder="Email" required="required"/>
+                </div>
+                <div class="item">
+                    <label for="password">MDP</label>
+                    <input type="password" name="password" id="password"  maxlength="50" placeholder="Mot de passe" required="required"/>
+                </div>
+                <div class="item">
+                    <label for="password2">Vérification MDP</label>
+                    <input type="password" name="password2" id="password2"  maxlength="50" placeholder="Confirmez mot de passe" required="required"/>
+                </div>
+                <div class="item">
+                    <label></label>
+                    <input name="submit" type="submit" value="Valider"/>
+                </div>
+            </form>
+        </div>
+        <div class="blocImage">
+            <img src="../public/img/bouledog.gif" width="400" height="400" alt="">
+        </div>
+    </div>
+</div>
+</body>
+</html>
